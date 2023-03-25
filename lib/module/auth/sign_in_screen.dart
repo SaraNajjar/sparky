@@ -32,7 +32,7 @@ class SignInScreen extends GetView<AuthController> {
                   height: AppSizes.space40.h,
                 ),
                 RichText(text: TextSpan(
-                  text: AppTexts.logIn.tr, style:ThemeApp.getTextTheme().displayLarge?.copyWith(
+                  text: AppTexts.loginTo.tr, style:ThemeApp.getTextTheme().displayLarge?.copyWith(
                     color: AppColors.textPrimaryColor
                 ),
                   children: [
@@ -134,7 +134,7 @@ class SignInScreen extends GetView<AuthController> {
                 DefaultSpacer(
                   height: AppSizes.space24.h,
                 ),
-                DefaultButton(text: AppTexts.logIn),
+                DefaultButton(text: AppTexts.login),
                 DefaultSpacer(
                   height: AppSizes.space24.h,
                 ),
