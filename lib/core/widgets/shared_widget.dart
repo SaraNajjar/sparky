@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sparky/helper/app_color.dart';
+import 'package:sparky/core/helper/app_color.dart';
+import 'package:sparky/core/helper/app_sizes.dart';
 
 class DefaultContainer extends StatelessWidget {
   Widget widget;
@@ -62,6 +63,20 @@ class DefaultButton extends StatelessWidget {
     );
   }
 }
+class DefaultSpacer extends StatelessWidget {
+  double? height ;
+  DefaultSpacer({super.key,
+    this.height=AppSizes.space24,
+  });
+  @override
+  Widget build(BuildContext context) {
+    return  SizedBox(
+      height: height?.h,
+
+    );
+  }
+}
+
 class DefaultCard extends StatelessWidget {
   String text;
   double? width;

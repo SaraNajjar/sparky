@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:sparky/services/theme_services.dart';
-import 'package:sparky/theme.dart';
+import 'package:sparky/core/services/theme_services.dart';
+import 'package:sparky/core/themes/theme.dart';
+import 'package:sparky/module/splash/splash_screen.dart';
 
 import 'core/Application/app_binding/app_binding.dart';
 import 'core/Application/app_router/app_router.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeApp.dark(),
             initialBinding: Binding(),
             getPages: appRoutes,
+            home: const SplashScreen(),
 
           );
         });

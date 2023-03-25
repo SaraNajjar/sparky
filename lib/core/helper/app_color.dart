@@ -3,6 +3,8 @@ import 'package:flutter/material.dart' show Color, MaterialColor;
 /// The color palette
 class AppColors {
   const AppColors._();
+  static const Color primaryColor = Color(0xFF3272D8);
+  static const Color textPrimaryColor = Color(0xFF111928);
 
   ///Default accent color
   static const Color blueAccent = Color(0xFF4a86cf);

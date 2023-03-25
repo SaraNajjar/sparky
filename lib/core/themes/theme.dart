@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show SystemUiOverlayStyle;
-
-import 'helper/app_color.dart';
+import 'package:sparky/core/helper/app_color.dart';
 
 /// Generate Adwaita light and dark theme.
 class ThemeApp {
