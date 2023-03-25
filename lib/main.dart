@@ -4,8 +4,8 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sparky/services/theme_services.dart';
 import 'package:sparky/theme.dart';
 
-import 'Application/app_binding/app_binding.dart';
-import 'Application/app_router/app_router.dart';
+import 'core/Application/app_binding/app_binding.dart';
+import 'core/Application/app_router/app_router.dart';
 
 void main() {
   runApp(const MyApp());
