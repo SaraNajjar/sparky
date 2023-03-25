@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sparky/core/helper/app_images.dart';
-import 'package:sparky/module/on_boarding_model.dart';
+import 'package:sparky/core/helper/app_texts.dart';
+import 'package:sparky/module/on_boarding/on_boarding_model.dart';
 
 class OnBoardingController extends GetxController {
   var onboardController = PageController();
@@ -10,18 +11,16 @@ class OnBoardingController extends GetxController {
   List<OnBoardingModel> board = [
     OnBoardingModel(
         image: AppImages.onBoardImage1,
-        title: 'Get Access To Quick Loans',
-        description: '''Easily get access to loans 
-using your phone'''),
+        title: AppTexts.onBoardTitle1.tr,
+        description: AppTexts.onBoardDes1.tr),
     OnBoardingModel(
-        image: AppImages.onBoardImage2,
-        title: 'Easy & Convenient',
-        description: 'No guarantors, No long queues, No paper.'),
+        image:AppImages.onBoardImage2,
+        title: AppTexts.onBoardTitle2.tr,
+        description: AppTexts.onBoardDes2.tr),
     OnBoardingModel(
-        image:AppImages.onBoardImage3,
-        title: 'Track Everything',
-        description: '''Your financial journey
-start here'''),
+        image: AppImages.onBoardImage3,
+        title: AppTexts.onBoardTitle3.tr,
+        description: AppTexts.onBoardDes3.tr),
   ];
   void  onPageChanged(index) {
     if (index ==board.length - 1) {

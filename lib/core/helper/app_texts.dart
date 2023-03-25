@@ -1,5 +1,6 @@
 class AppTexts{
 static const appName='Sparky';
+static const appFontFamily='Poppins';
 static const onBoardTitle1='onBoardTitle1';
 static const onBoardTitle2='onBoardTitle2';
 static const onBoardTitle3='onBoardTitle3';
@@ -13,4 +14,7 @@ static const email ='email ';
 static const password='password';
 static const skip='skip';
 static const getStarted='getStarted';
+static const forgetPass='forgetPass';
+static const signWith='signWith';
+static const createNewAccount='createNewAccount';
 }

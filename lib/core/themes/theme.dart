@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show SystemUiOverlayStyle;
 import 'package:sparky/core/helper/app_color.dart';
+import 'package:sparky/core/helper/app_texts.dart';
 
 /// Generate Adwaita light and dark theme.
 class ThemeApp {
@@ -40,9 +41,9 @@ class ThemeApp {
     final color = brightness == Brightness.light ? Colors.black54 : Colors.white70;
     return TextTheme(
       displayLarge: TextStyle(
-        fontSize: 22,
+        fontSize: 24,
         color: color,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w700,
       ),
       displayMedium: TextStyle(
         fontSize: 21,
@@ -72,9 +73,10 @@ class ThemeApp {
       bodyLarge: TextStyle(
         fontSize: 15,
         color: color,
+        fontWeight: FontWeight.w400,
       ),
       bodySmall: TextStyle(
-        fontSize: 13,
+        fontSize: 12,
         color: color,
         fontWeight: FontWeight.w400,
       ),
@@ -82,7 +84,7 @@ class ThemeApp {
   }
 
   /// A default light theme.
-  static ThemeData light({String? fontFamily}) => ThemeData(
+  static ThemeData light({String? fontFamily=AppTexts.appFontFamily}) => ThemeData(
     fontFamily: fontFamily,
     tabBarTheme: TabBarTheme(labelColor: _lightColorScheme.onSurface),
     brightness: Brightness.light,
@@ -134,7 +136,7 @@ class ThemeApp {
   );
 
   /// A default dark theme.
-  static ThemeData dark({String? fontFamily}) => ThemeData(
+  static ThemeData dark({String? fontFamily=AppTexts.appFontFamily}) => ThemeData(
 
     fontFamily: fontFamily,
     tabBarTheme: TabBarTheme(labelColor: _darkColorScheme.onBackground),

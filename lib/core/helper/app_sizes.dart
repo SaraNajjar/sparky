@@ -10,4 +10,5 @@ class AppSizes{
   static const double space32=32;
   static const double space40=40;
   static const double space48=48;
+  static const double padding20=20;
 }

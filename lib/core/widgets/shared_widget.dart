@@ -33,8 +33,8 @@ class DefaultButton extends StatelessWidget {
   DefaultButton({super.key,
     required this.text,
     this.width,
-    this.height=60,
-    this.radius=5,
+    this.height=56,
+    this.radius=AppSizes.radius8,
     this.screen
 
   });
@@ -45,7 +45,7 @@ class DefaultButton extends StatelessWidget {
       child: MaterialButton(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius!.r)),
-        color:  AppColors.primarySwatchColor,
+        color:  AppColors.primaryColor,
         height: height?.h,
         onPressed: () {
           if(screen=='/') {
@@ -161,19 +161,26 @@ class DefaultTextForm extends StatelessWidget {
       enabled: isenable,
       obscureText: isPassword,
       decoration: InputDecoration(
-          label: Text(label??''),
-          labelStyle: const TextStyle(
+          hintText: label??'',
+          hintStyle: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
             color: Color(0xffA5A5A5),
           ),
+          disabledBorder:OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: Color(0xffE0E7FD),width: 1.5)) ,
+          enabledBorder:OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: Color(0xffE0E7FD),width: 1.5)) ,
           // icon: Icon(iconData),
           filled: filled,
           fillColor: filled?AppColors.primarySwatchColor:null,
-          prefixIcon: hasPrefixIcon ? Icon(iconData) : null,
+
+          suffixIcon:hasPrefixIcon ? Icon(iconDataSuffixx,color: AppColors.iconColor,) : null ,
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Color(0xffCBD4EB)))),
+              borderSide: const BorderSide(color: Color(0xffE0E7FD)))),
     );
 
   }

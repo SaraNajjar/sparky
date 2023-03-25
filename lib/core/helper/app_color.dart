@@ -5,6 +5,10 @@ class AppColors {
   const AppColors._();
   static const Color primaryColor = Color(0xFF3272D8);
   static const Color textPrimaryColor = Color(0xFF111928);
+  static const Color iconColor = Color(0xFF292D32);
+  static const Color borderColor = Color(0xffE0E7FD);
+  static const Color grey1 = Color(0xff636B7E);
+  static const Color black1 = Color(0xff1A1B2D);
 
   ///Default accent color
   static const Color blueAccent = Color(0xFF4a86cf);

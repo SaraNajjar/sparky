@@ -16,4 +16,7 @@ const  Map<String, String> en ={
   AppTexts.password: "Password",
   AppTexts.skip: "Skip",
   AppTexts.getStarted: "Get Started",
+  AppTexts.forgetPass: "Forget Password?",
+  AppTexts.signWith: "Sign in with",
+  AppTexts.createNewAccount: "Create a New Account?",
 };
