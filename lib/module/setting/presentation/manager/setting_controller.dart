@@ -7,7 +7,10 @@ class SettingController extends GetxController{
   var status = false.obs;
   var notificationsStatus = false.obs;
   var langStatus = false.obs;
-
+  TextEditingController passController = TextEditingController();
+  TextEditingController newPassController = TextEditingController();
+  TextEditingController confirmNewPassController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
 void changeSwitchValue(val){
   status.value=val;
   update();

@@ -36,6 +36,8 @@ const  Map<String, String> ar ={
   AppTexts.reSentCode: "إعادة إرسال رمز التنشيط" ,
   AppTexts.dontWorry: "لا تقلق. إنه يحدث لأفضل منا. أدخل رقم هاتفك المحمول واتبع التعليمات!" ,
   AppTexts.createPass: "إنشاء كلمة مرور جديدة" ,
+  AppTexts.changePass: "تغيير كلمة المرور " ,
+  AppTexts.currentPass:'كلمة المرور الحالية',
   AppTexts.createPassSent: "أنشئ كلمة مرور قوية وفريدة من نوعها لحسابك!",
   AppTexts.newPass: "كلمة مرور جديدة" ,
   AppTexts.setting: "الإعدادات" ,
@@ -44,4 +46,8 @@ const  Map<String, String> ar ={
   AppTexts.confirmPass: "تأكيد كلمة المرور" ,
   AppTexts.confirm: "تأكيد" ,
   AppTexts.change: "تغيير" ,
+  AppTexts.saveChange:'حفظ التغييرات',
+  AppTexts.changePhone:'نغيير رقم الهاتف',
+
+
 };

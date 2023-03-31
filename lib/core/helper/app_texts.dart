@@ -34,6 +34,8 @@ static const submit='submit';
 static const reSentCode='reSentCode';
 static const dontWorry='dontWorry';
 static const createPass='createPass';
+static const changePass='changePass';
+static const currentPass='currentPass';
 static const createPassSent='createPassSent';
 static const newPass='newPass';
 static const confirmPass='confirmPass';
@@ -42,4 +44,6 @@ static const change='change';
 static const setting='setting';
 static const darkMode='darkMode';
 static const notifications='notifications';
+static const saveChange='saveChange';
+static const changePhone='changePhone';
 }

@@ -10,6 +10,8 @@ import 'package:sparky/firebase_options.dart';
 import 'package:sparky/module/auth/presentation/binding/auth_binding.dart';
 import 'package:sparky/module/auth/presentation/pages/sign_in_screen.dart';
 import 'package:sparky/module/setting/presentation/manager/setting_controller.dart';
+import 'package:sparky/module/setting/presentation/pages/change_pass_screen.dart';
+import 'package:sparky/module/setting/presentation/pages/change_phone_number_screen.dart';
 import 'package:sparky/module/setting/presentation/pages/setting_screen.dart';
 import 'package:sparky/module/splash/splash_screen.dart';
 import 'package:sparky/test.dart';
@@ -50,7 +52,7 @@ SettingController controller=Get.put(SettingController());
             darkTheme: ThemeApp.dark(),
             initialBinding: AuthBinding(),
             getPages: appRoutes,
-            home:  const SplashScreen(),
+            home:  const ChangePhoneScreen(),
 
           );
         });
