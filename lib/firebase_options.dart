@@ -45,17 +45,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyBgWHDW9O_BVFOmcnMrR6GpG0PPg86MVeA',
-    appId: '1:196438397966:web:35e29d4e5dca8d988e985f',
+    appId: '1:196438397966:web:309bfa3359f587b78e985f',
     messagingSenderId: '196438397966',
     projectId: 'sparky-160e7',
     authDomain: 'sparky-160e7.firebaseapp.com',
     storageBucket: 'sparky-160e7.appspot.com',
-    measurementId: 'G-R3HHQLHSZT',
+    measurementId: 'G-SCR0V0VTM3',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBwrB8a91elNTKh6gRkM5TFJn-USVtAddk',
-    appId: '1:196438397966:android:32bfec3c010f51268e985f',
+    appId: '1:196438397966:android:7cf4582dda7eee1b8e985f',
     messagingSenderId: '196438397966',
     projectId: 'sparky-160e7',
     storageBucket: 'sparky-160e7.appspot.com',
@@ -63,7 +63,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyC6ZyYYJYLQMRYo1eXMAU02Bfn_kulKqYs',
-    appId: '1:196438397966:ios:06ba969ab6d4643c8e985f',
+    appId: '1:196438397966:ios:84e1ea8a8583f9928e985f',
     messagingSenderId: '196438397966',
     projectId: 'sparky-160e7',
     storageBucket: 'sparky-160e7.appspot.com',
@@ -73,7 +73,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyC6ZyYYJYLQMRYo1eXMAU02Bfn_kulKqYs',
-    appId: '1:196438397966:ios:06ba969ab6d4643c8e985f',
+    appId: '1:196438397966:ios:84e1ea8a8583f9928e985f',
     messagingSenderId: '196438397966',
     projectId: 'sparky-160e7',
     storageBucket: 'sparky-160e7.appspot.com',

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sparky</string>
+    <string name="facebook_app_id">539892374928724</string>
+    <string name="fb_login_protocol_scheme">e2bc926f84bee1c3a261f745a82e9e53</string>
+    <string name="facebook_client_token">c562b5ac943198c154302bfa11888024</string>
+</resources>

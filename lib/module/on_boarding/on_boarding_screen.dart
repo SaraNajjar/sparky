@@ -7,8 +7,8 @@ import 'package:sparky/core/Application/app_router/app_router.dart';
 import 'package:sparky/core/helper/app_color.dart';
 import 'package:sparky/core/helper/app_sizes.dart';
 import 'package:sparky/core/helper/app_texts.dart';
+import 'package:sparky/core/services/shared_pref.dart';
 import 'package:sparky/core/widgets/shared_widget.dart';
-import 'package:sparky/module/auth/sign_in_screen.dart';
 import 'package:sparky/module/on_boarding/on_boarding_controller.dart';
 import 'package:sparky/module/on_boarding/widgets/on_boarding_widgets.dart';
 
@@ -17,14 +17,14 @@ class OnBoarding_Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // void submit() {
-    //   SharedPrefs.saveData(key: 'onBoarding', value: true).then(((value) {
-    //     if (value = true) {
-    //       Get.offAndToNamed(RoutesClass.getLoginRoute());
-    //
-    //     }
-    //   }));
-    // }
+    void submit() {
+      SharedPrefs.saveData(key: 'onBoarding', value: true).then(((value) {
+        if (value = true) {
+          Get.offAndToNamed(Routes.loginRoute);
+
+        }
+      }));
+    }
 
     return GetBuilder<OnBoardingController>(
         init: OnBoardingController(),
@@ -36,15 +36,15 @@ class OnBoarding_Screen extends StatelessWidget {
 
                 actions: [
                   Padding(
-                    padding:EdgeInsets.only(right: 20.w,top: 20.h) ,
+                    padding:EdgeInsets.only(right: AppSizes.padding20.w,top: AppSizes.padding20.h,left: AppSizes.padding20.w) ,
                     child: InkWell(
                       onTap: () {
-                        // Get.toNamed(RoutesClass.getLoginRoute());
-                        // submit();
+                         Get.toNamed(Routes.loginRoute);
+                         submit();
                       },
                       child: Text(AppTexts.skip.tr,
-                          style: context.theme.textTheme.headline2
-                              ?.copyWith(color: Colors.grey)),
+                          style: context.theme.textTheme.bodyText1
+                              ?.copyWith(color: Colors.grey,fontSize: 16.sp)),
                     ),
                   )
                 ],
@@ -94,7 +94,11 @@ backgroundColor:AppColors.primaryColor ,
               child: DefaultButton(
                 text: AppTexts.getStarted.tr,
                 width: 200.w,
-                screen:  Routes.loginRoute
+                onPress: (){
+                  controller.getPosition().then((value) =>  Get.offAllNamed( Routes.loginRoute));
+
+                },
+
 
               ),
             )

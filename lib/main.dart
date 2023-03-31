@@ -6,26 +6,35 @@ import 'package:sparky/core/local/local.dart';
 import 'package:sparky/core/services/shared_pref.dart';
 import 'package:sparky/core/services/theme_services.dart';
 import 'package:sparky/core/themes/theme.dart';
-import 'package:sparky/module/auth/auth_binding.dart';
-import 'package:sparky/module/auth/auth_controller.dart';
+import 'package:sparky/firebase_options.dart';
+import 'package:sparky/module/auth/presentation/binding/auth_binding.dart';
+import 'package:sparky/module/auth/presentation/pages/sign_in_screen.dart';
+import 'package:sparky/module/setting/presentation/manager/setting_controller.dart';
+import 'package:sparky/module/setting/presentation/pages/setting_screen.dart';
 import 'package:sparky/module/splash/splash_screen.dart';
-
+import 'package:sparky/test.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'core/Application/app_binding/app_binding.dart';
 import 'core/Application/app_router/app_router.dart';
-
+import 'module/auth/presentation/manager/auth_controller.dart';
+import 'module/auth/presentation/pages/otp_code_screen.dart';
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPrefs().init();
-  runApp(const MyApp());
+
+  await Firebase.initializeApp(
+options: DefaultFirebaseOptions.currentPlatform
+  );
+
+
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+   MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    AuthController controller=Get.put(AuthController());
+SettingController controller=Get.put(SettingController());
     return ScreenUtilInit(
         designSize: const Size(360, 690),
         minTextAdapt: true,
@@ -41,7 +50,7 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeApp.dark(),
             initialBinding: AuthBinding(),
             getPages: appRoutes,
-            home: const SplashScreen(),
+            home:  const SplashScreen(),
 
           );
         });

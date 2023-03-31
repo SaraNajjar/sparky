@@ -9,6 +9,7 @@ class AppColors {
   static const Color borderColor = Color(0xffE0E7FD);
   static const Color grey1 = Color(0xff636B7E);
   static const Color black1 = Color(0xff1A1B2D);
+  static const Color formBackground = Color(0xffF1F8FF);
 
   ///Default accent color
   static const Color blueAccent = Color(0xFF4a86cf);

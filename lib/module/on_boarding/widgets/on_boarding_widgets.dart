@@ -40,7 +40,9 @@ class OnBoardingItem extends StatelessWidget {
             DefaultSpacer(height: AppSizes.space16.h),
             Text(
               '${onboardingModel.title.tr}',
-              style: context.theme.textTheme.bodyText1,
+              style: context.theme.textTheme.displayLarge?.copyWith(fontSize: 24.sp,
+              color: AppColors.textPrimaryColor
+              ),
             ),
             SizedBox(
               height: 14.h,

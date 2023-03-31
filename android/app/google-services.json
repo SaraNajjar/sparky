@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:196438397966:android:32bfec3c010f51268e985f",
+        "mobilesdk_app_id": "1:196438397966:android:7cf4582dda7eee1b8e985f",
         "android_client_info": {
           "package_name": "com.sparkyapp.sparky"
         }
@@ -29,6 +29,13 @@
             {
               "client_id": "196438397966-rbufispu3j8vtaehrcf52gu7fl7o0nbv.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "196438397966-82c0umd0mhs92232v1vbbsnkdvk4oo3m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sparkyapp.sparky"
+              }
             }
           ]
         }

@@ -61,9 +61,9 @@ class ThemeApp {
         fontWeight: FontWeight.bold,
       ),
       headlineSmall: TextStyle(
-        fontSize: 15,
+        fontSize: 14,
         color: color,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w400,
       ),
       titleLarge: TextStyle(
         fontSize: 12,

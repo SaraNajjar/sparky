@@ -1,21 +1,26 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:sparky/core/Application/app_router/app_router.dart';
 import 'package:sparky/core/helper/app_color.dart';
 import 'package:sparky/core/helper/app_images.dart';
 import 'package:sparky/core/helper/app_sizes.dart';
 import 'package:sparky/core/helper/app_texts.dart';
 import 'package:sparky/core/themes/theme.dart';
+import 'package:sparky/core/validations/form_validation.dart';
 import 'package:sparky/core/widgets/shared_widget.dart';
-import 'package:sparky/module/auth/auth_controller.dart';
+import 'package:sparky/module/auth/domain/entities/user_entity.dart';
+import 'package:sparky/module/auth/presentation/manager/auth_controller.dart';
+import 'package:sparky/module/auth/presentation/pages/otp_code_screen.dart';
 
 class SignInScreen extends GetView<AuthController> {
   SignInScreen({super.key});
 
-  GlobalKey formKey = GlobalKey();
-
+  var formKey = GlobalKey<FormState>();
+var phone;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,13 +97,14 @@ class SignInScreen extends GetView<AuthController> {
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                     color: Color(0xffA5A5A5),
-                  ),
+                  ),initialCountryCode: 'PS',
                   style: context.theme.textTheme.headline4,
                   flagsButtonPadding:
                       EdgeInsets.symmetric(horizontal: AppSizes.padding20.w),
-                  onChanged: (phone) {
-                    print(phone.completeNumber);
+                  onSaved: (phone){
+                    controller.phoneController.text=phone!.completeNumber;
                   },
+
                 ),
                 DefaultSpacer(
                   height: AppSizes.space16.h,
@@ -114,10 +120,10 @@ class SignInScreen extends GetView<AuthController> {
                     textEditingController: controller.passController,
                     textInputType: TextInputType.text,
                     isPassword: true,
-                    label: 'password',
+                    label: AppTexts.password.tr,
                     hasPrefixIcon: true,
                     iconDataSuffixx: Icons.visibility,
-                    validator: (v){},
+                    validator: FormValidator.validatePassword,
 
                 ),
                 DefaultSpacer(
@@ -126,6 +132,9 @@ class SignInScreen extends GetView<AuthController> {
                 Row(mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     InkWell(
+                      onTap: (){
+                        Get.toNamed(Routes.forgetPassRoute);
+                      },
                       child: Text(AppTexts.forgetPass.tr,
                       style: ThemeApp.getTextTheme().bodySmall,),
                     ),
@@ -134,7 +143,15 @@ class SignInScreen extends GetView<AuthController> {
                 DefaultSpacer(
                   height: AppSizes.space24.h,
                 ),
-                DefaultButton(text: AppTexts.login),
+                DefaultButton(text: AppTexts.login,
+                onPress: (){
+                  if(formKey.currentState!.validate()){
+                    print(controller.phoneController.text);
+                  }
+           //   controller.phonVerification(controller.phoneController.text.trim());
+
+
+                },),
                 DefaultSpacer(
                   height: AppSizes.space24.h,
                 ),
@@ -152,11 +169,15 @@ class SignInScreen extends GetView<AuthController> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          controller.signInWithGoogle();
+                        },
                         icon: Image.asset(AppImages.googleIcon,width: 25.w,height: 25.h,),
                       ),IconButton(
                         padding: EdgeInsets.zero,
-                        onPressed: (){},
+                        onPressed: ()async{
+                          await controller.signInWithFacebook();
+                        },
                         icon: Image.asset(AppImages.facebookIcon,width: 45.w,height: 45.h,),
                       ),IconButton(
                         padding: EdgeInsets.zero,
@@ -170,19 +191,25 @@ class SignInScreen extends GetView<AuthController> {
                   height: AppSizes.space40.h,
                 ),
                 Center(
-                  child: RichText(text: TextSpan(
-                      text: AppTexts.createNewAccount.tr, style:ThemeApp.getTextTheme().bodyLarge?.copyWith(
-                      color: AppColors.grey1
+                  child: GestureDetector(
+                    onTap: (){
+                      Get.toNamed(Routes.signUpRoute);
+                    },
+                    child: RichText(text: TextSpan(
+                        text: AppTexts.createNewAccount.tr, style:ThemeApp.getTextTheme().bodyLarge?.copyWith(
+                        color: AppColors.grey1
+                    ),
+                        children: [
+
+                          TextSpan(
+                            text: ' '+AppTexts.signUp.tr,
+                            style: ThemeApp.getTextTheme().bodyLarge?.copyWith(
+                                color: AppColors.primaryColor
+                            ),
+                          )
+                        ]
+                    )),
                   ),
-                      children: [
-                        TextSpan(
-                          text: ' '+AppTexts.signUp.tr,
-                          style: ThemeApp.getTextTheme().bodyLarge?.copyWith(
-                              color: AppColors.primaryColor
-                          ),
-                        )
-                      ]
-                  )),
                 ),
               ],
             ),

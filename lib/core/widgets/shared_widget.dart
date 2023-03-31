@@ -26,6 +26,7 @@ class DefaultContainer extends StatelessWidget {
 class DefaultButton extends StatelessWidget {
   String text;
   double? width;
+  void Function()? onPress;
 
   String? screen;
   double? radius ;
@@ -35,7 +36,8 @@ class DefaultButton extends StatelessWidget {
     this.width,
     this.height=56,
     this.radius=AppSizes.radius8,
-    this.screen
+    this.screen,
+  this.onPress
 
   });
   @override
@@ -47,13 +49,7 @@ class DefaultButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(radius!.r)),
         color:  AppColors.primaryColor,
         height: height?.h,
-        onPressed: () {
-          if(screen=='/') {
-            Get.offAllNamed(screen!);
-          } else {
-            Get.toNamed(screen!);
-          }
-        },
+        onPressed: onPress,
         child: Text(
           text.tr,
           style: TextStyle(
@@ -65,13 +61,16 @@ class DefaultButton extends StatelessWidget {
 }
 class DefaultSpacer extends StatelessWidget {
   double? height ;
+  double? width ;
   DefaultSpacer({super.key,
     this.height=AppSizes.space24,
+  this.width
   });
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
       height: height?.h,
+      width: width?.w,
 
     );
   }
@@ -130,6 +129,7 @@ class DefaultTextForm extends StatelessWidget {
   bool hasPrefixIcon;
   bool filled;
   bool readOnly;
+  int? lines;
   DefaultTextForm(
       {super.key,
         required this. textEditingController,
@@ -140,6 +140,7 @@ class DefaultTextForm extends StatelessWidget {
         this.isPassword = false,
         required this.validator,
         this. label,
+        this. lines=1,
         this. iconData,
         this. iconDataSuffixx,
         this. isenable = true,
@@ -148,8 +149,8 @@ class DefaultTextForm extends StatelessWidget {
         this.readOnly=false});
   @override
   Widget build(BuildContext context) {
-    return     TextFormField(
-      style: context.theme.textTheme.headline2?.copyWith(
+    return     TextFormField(maxLines:lines ,
+      style: context.theme.textTheme.bodyText1?.copyWith(
           color:Get.isDarkMode?Colors.white: AppColors.dark1
       ),textAlign:TextAlign.start,readOnly:readOnly ,
       controller: textEditingController,
