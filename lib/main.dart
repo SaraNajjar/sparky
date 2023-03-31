@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:sparky/services/theme_services.dart';
-import 'package:sparky/theme.dart';
+import 'package:sparky/core/local/local.dart';
+import 'package:sparky/core/services/shared_pref.dart';
+import 'package:sparky/core/services/theme_services.dart';
+import 'package:sparky/core/themes/theme.dart';
 
-import 'Application/app_binding/app_binding.dart';
-import 'Application/app_router/app_router.dart';
+import 'core/Application/app_binding/app_binding.dart';
+import 'core/Application/app_router/app_router.dart';
+import 'module/home/layout/layout_screen.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPrefs().init();
   runApp(const MyApp());
 }
 
@@ -25,11 +30,13 @@ class MyApp extends StatelessWidget {
           return  GetMaterialApp(
             debugShowCheckedModeBanner: false,
             themeMode:ThemeServices().theme!,
+            home:  LayoutScreen(),
+            //locale:controller.initialLang ,
+            translations: MyLocal(),
             theme:ThemeApp.light(),
             darkTheme: ThemeApp.dark(),
             initialBinding: Binding(),
             getPages: appRoutes,
-
           );
         });
   }
